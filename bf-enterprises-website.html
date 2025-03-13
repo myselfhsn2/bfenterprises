@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BF Enterprises Mills (Pvt) Ltd - Polyester Yarn Specialists</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #0056b3;
+            --secondary: #6c757d;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --accent: #17a2b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: #003d7a;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .btn:hover {
+            background-color: #003d7a;
+            color: white;
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .flex {
+            display: flex;
+        }
+        
+        .flex-wrap {
+            flex-wrap: wrap;
+        }
+        
+        .justify-between {
+            justify-content: space-between;
+        }
+        
+        .align-center {
+            align-items: center;
+        }
+        
+        .gap-20 {
+            gap: 20px;
+        }
+        
+        .mt-40 {
+            margin-top: 40px;
+        }
+        
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+        
+        .grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .grid-cols-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .grid-cols-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .col-span-2 {
+            grid-column: span 2;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        
+        .navbar-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .navbar-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .navbar-logo span {
+            color: var(--secondary);
+        }
+        
+        .navbar-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .navbar-menu li {
+            margin-left: 20px;
+        }
+        
+        .navbar-menu li a {
+            padding: 5px 10px;
+            font-weight: 500;
+        }
+        
+        .navbar-menu li a:hover, 
+        .navbar-menu li a.active {
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary);
+        }
+        
+        .navbar-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/800') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-top: 75px;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 15px;
+        }
+        
+        /* Cards */
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        
+        /* Features */
+        .features {
+            background-color: var(--light);
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        /* About */
+        .about-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        /* Products */
+        .product-item {
+            margin-bottom: 40px;
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        /* Machinery */
+        .machinery {
+            background-color: var(--light);
+        }
+        
+        .machinery-item {
+            margin-bottom: 30px;
+        }
+        
+        .machinery-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        /* Quality Control */
+        .quality-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        /* Sustainability */
+        .sustainability {
+            background-color: var(--light);
+        }
+        
+        /* Contact */
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+        }
+        
+        .contact-info {
+            margin-top: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-right: 10px;
+        }
+        
+        .map-container {
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .grid-cols-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .about-img {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar-menu {
+                position: fixed;
+                top: 75px;
+                left: -100%;
+                width: 100%;
+                flex-direction: column;
+                background-color: white;
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+                padding: 20px 0;
+            }
+            
+            .navbar-menu.active {
+                left: 0;
+            }
+            
+            .navbar-menu li {
+                margin: 0;
+                text-align: center;
+                padding: 10px 0;
+            }
+            
+            .navbar-toggle {
+                display: block;
+            }
+            
+            .grid-cols-2, .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                height: 60vh;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="navbar-logo">BF <span>Enterprises</span></a>
+            <ul class="navbar-menu" id="navMenu">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#machinery">Machinery</a></li>
+                <li><a href="#quality">Quality Control</a></li>
+                <li><a href="#sustainability">Sustainability</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="navbar-toggle" id="navToggle">☰</div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Premium Polyester Yarn Manufacturing</h1>
+                <p class="hero-subtitle">BF Enterprises Mills specializes in 44mm pure polyester fiber spinning with state-of-the-art technology and unwavering commitment to quality.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn">Get a Quote</a>
+                    <a href="#about" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features">
+        <div class="container">
+            <div class="grid grid-cols-3">
+                <div class="feature-item">
+                    <div class="feature-icon">📈</div>
+                    <h3>Premium Quality</h3>
+                    <p>Our yarn meets the highest industry standards, backed by rigorous quality control testing.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Modern Technology</h3>
+                    <p>We utilize cutting-edge machinery and technology for optimal production efficiency.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">✅</div>
+                    <h3>Expert Team</h3>
+                    <p>Our highly skilled workforce ensures consistent product excellence and timely delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-title">About BF Enterprises Mills</h2>
+            <div class="grid grid-cols-2 gap-20">
+                <div>
+                    <h3>Our Story</h3>
+                    <p>BF Enterprises Mills (Pvt) Ltd was established with a vision to become a leading manufacturer of premium polyester yarn in the textile industry. Our journey began with a commitment to quality, efficiency, and sustainable practices.</p>
+                    
+                    <h3 class="mt-40">Our Mission</h3>
+                    <p>To produce high-quality polyester yarn that meets the diverse needs of our customers while maintaining sustainable and efficient production practices.</p>
+                    
+                    <h3 class="mt-40">Our Values</h3>
+                    <ul>
+                        <li>Quality Excellence</li>
+                        <li>Customer Satisfaction</li>
+                        <li>Technological Innovation</li>
+                        <li>Environmental Responsibility</li>
+                        <li>Team Development</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="/api/placeholder/600/400" alt="BF Enterprises Mills Factory" class="about-img">
+                    
+                    <h3 class="mt-40">Production Capabilities</h3>
+                    <p>Our factory is equipped with state-of-the-art machinery and technology, enabling us to produce premium polyester yarn with precision and efficiency. With a focus on 44mm pure polyester fiber, we cater to diverse market segments.</p>
+                    
+                    <p>Key capabilities include:</p>
+                    <ul>
+                        <li>Annual production capacity of X tons</li>
+                        <li>Specialized in various counts ranging from Ne 10 to Ne 40</li>
+                        <li>Multiple yarn characteristics including ring-spun, compact, and slub varieties</li>
+                        <li>Customized yarn development based on client specifications</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Products & Services</h2>
+            <p class="section-subtitle">Specializing in premium 44mm pure polyester yarn manufacturing</p>
+            
+            <div class="product-item">
+                <div class="grid grid-cols-2 gap-20">
+                    <div>
+                        <img src="/api/placeholder/600/400" alt="Polyester Yarn" class="product-img">
+                    </div>
+                    <div>
+                        <h3>Polyester Yarn Production</h3>
+                        <p>At BF Enterprises Mills, we specialize in manufacturing high-quality polyester yarn from 44mm pure polyester fiber. Our production process ensures consistency, durability, and excellent performance in various textile applications.</p>
+                        
+                        <h4 class="mt-40">Yarn Specifications:</h4>
+                        <ul>
+                            <li>Yarn Count Range: Ne 10 to Ne 40</li>
+                            <li>Fiber Length: 44mm</li>
+                            <li>Yarn Types: Ring-spun, Compact, Slub</li>
+                            <li>Applications: Woven fabrics, Knitted fabrics, Home textiles</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-item">
+                <div class="grid grid-cols-2 gap-20">
+                    <div>
+                        <h3>Production Process</h3>
+                        <p>Our yarn manufacturing process follows a systematic approach to ensure quality at every stage:</p>
+                        
+                        <ol>
+                            <li><strong>Blow Room:</strong> Fiber opening, cleaning, and mixing for a uniform blend</li>
+                            <li><strong>Carding:</strong> Fiber individualization and parallel alignment</li>
+                            <li><strong>Drawing/Simplex:</strong> Drafting and evening out of fibers</li>
+                            <li><strong>Ring Spinning:</strong> Fiber twisting and yarn formation</li>
+                            <li><strong>Auto Cone:</strong> Winding yarn onto cones, removing imperfections</li>
+                            <li><strong>Quality Testing:</strong> Rigorous testing for yarn strength, evenness, and other parameters</li>
+                            <li><strong>Packaging:</strong> Proper packaging for safe transportation</li>
+                        </ol>
+                    </div>
+                    <div>
+                        <img src="/api/placeholder/600/400" alt="Production Process" class="product-img">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-item">
+                <div class="grid grid-cols-2 gap-20">
+                    <div>
+                        <img src="/api/placeholder/600/400" alt="Custom Services" class="product-img">
+                    </div>
+                    <div>
+                        <h3>Custom Services</h3>
+                        <p>We offer customized yarn development services tailored to specific client requirements. Our technical team works closely with customers to understand their needs and develop yarn specifications that meet their application demands.</p>
+                        
+                        <h4 class="mt-40">Our services include:</h4>
+                        <ul>
+                            <li>Custom yarn count development</li>
+                            <li>Specialized finishing treatments</li>
+                            <li>Technical consultancy for yarn applications</li>
+                            <li>Product development support</li>
+                            <li>Sample development and testing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section (Continued) -->
+    <section class="section sustainability" id="sustainability">
+        <div class="container">
+            <h2 class="section-title">Sustainability & Efficiency</h2>
+            <p class="section-subtitle">Optimizing operations while minimizing environmental impact</p>
+            
+            <div class="grid grid-cols-3 gap-20 mt-40">
+                <div>
+                    <h4>Production Optimization</h4>
+                    <ul>
+                        <li>Workflow streamlining</li>
+                        <li>Cross-training staff</li>
+                        <li>Preventive maintenance</li>
+                        <li>Quality control at source</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resource Management</h4>
+                    <ul>
+                        <li>Inventory optimization</li>
+                        <li>Just-in-time scheduling</li>
+                        <li>Supplier consolidation</li>
+                        <li>Raw material quality focus</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Technology Integration</h4>
+                    <ul>
+                        <li>Targeted automation</li>
+                        <li>Data-driven decision making</li>
+                        <li>Production monitoring systems</li>
+                        <li>Energy usage optimization</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Reach out to discuss your polyester yarn requirements</p>
+            
+            <div class="grid grid-cols-2 gap-20">
+                <div>
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-control" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Company Name</label>
+                                <input type="text" id="company" class="form-control">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" class="form-control" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="card">
+                        <h3>Get In Touch</h3>
+                        <p>We're here to answer any questions about our products and services. Reach out to us using the contact information below, or fill out the form to send us a message.</p>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">📍</div>
+                                <p>123 Industrial Zone, Textile City, Country</p>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <p>+xx xxx-xxx-xxxx</p>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">✉️</div>
+                                <p>info@bfenterprisesmills.com</p>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">🕒</div>
+                                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="map-container">
+                            <!-- Placeholder for Google Maps -->
+                            <img src="/api/placeholder/600/300" alt="Location Map" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>BF Enterprises Mills</h3>
+                    <p>Specializing in premium polyester yarn manufacturing with a commitment to quality, efficiency, and customer satisfaction.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><span>f</span></a>
+                        <a href="#" aria-label="Twitter"><span>t</span></a>
+                        <a href="#" aria-label="LinkedIn"><span>in</span></a>
+                        <a href="#" aria-label="Instagram"><span>ig</span></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#machinery">Machinery</a></li>
+                        <li><a href="#quality">Quality Control</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Our Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="#products">Polyester Yarns</a></li>
+                        <li><a href="#products">Ring-Spun Yarns</a></li>
+                        <li><a href="#products">Compact Yarns</a></li>
+                        <li><a href="#products">Slub Yarns</a></li>
+                        <li><a href="#products">Custom Developments</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li>123 Industrial Zone, Textile City</li>
+                        <li>+xx xxx-xxx-xxxx</li>
+                        <li>info@bfenterprisesmills.com</li>
+                        <li>Monday - Friday: 9:00 AM - 5:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 BF Enterprises Mills (Pvt) Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.getElementById('navToggle');
+            const navMenu = document.getElementById('navMenu');
+            
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+            
+            // Close the mobile menu when a link is clicked
+            const navLinks = document.querySelectorAll('.navbar-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    navMenu.classList.remove('active');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Form submission handling
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will get back to you soon.');
+                    contactForm.reset();
+                });
+            }
+            
+            // Active link highlighting based on scroll position
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section');
+                const navLinks = document.querySelectorAll('.navbar-menu a');
+                
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (window.pageYOffset >= sectionTop - 100) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
