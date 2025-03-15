@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BF Enterprises Mills (Pvt) Ltd - Polyester Yarn Specialists</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>BF Enterprises (Pvt) Ltd - Polyester Yarn Specialists</title>
     <style>
         /* Global Styles */
         :root {
@@ -21,6 +21,15 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
         body {
             color: #333;
             line-height: 1.6;
@@ -50,7 +59,8 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
+            box-sizing: border-box;
         }
         
         .btn {
@@ -173,10 +183,12 @@
         .navbar-menu {
             display: flex;
             list-style: none;
+            padding-left: 0;
         }
         
         .navbar-menu li {
             margin-left: 20px;
+            margin-bottom: 0;
         }
         
         .navbar-menu li a {
@@ -194,6 +206,8 @@
             display: none;
             cursor: pointer;
             font-size: 1.5rem;
+            padding: 5px;
+            color: var(--primary);
         }
         
         /* Hero Section */
@@ -359,20 +373,33 @@
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            gap: 15px;
         }
         
         .contact-icon {
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             color: var(--primary);
-            margin-right: 10px;
+            min-width: 24px;
+            text-align: center;
+        }
+        
+        .contact-item p {
+            margin: 0;
+            flex: 1;
         }
         
         .map-container {
-            height: 300px;
+            height: 450px;
             border-radius: 8px;
             overflow: hidden;
             margin-top: 30px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
         }
         
         /* Footer */
@@ -456,50 +483,96 @@
         }
         
         @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .navbar-container {
+                padding: 10px 0;
+            }
+            
             .navbar-menu {
+                display: none;
                 position: fixed;
-                top: 75px;
-                left: -100%;
+                top: 60px;
+                left: 0;
                 width: 100%;
                 flex-direction: column;
                 background-color: white;
                 box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
                 transition: all 0.3s ease;
                 padding: 20px 0;
+                z-index: 999;
             }
             
             .navbar-menu.active {
-                left: 0;
+                display: flex;
             }
-            
+
             .navbar-menu li {
-                margin: 0;
-                text-align: center;
-                padding: 10px 0;
+                margin: 10px 20px;
+            }
+
+            .navbar-toggle {
+                display: block;  /* Make toggle button visible on mobile */
             }
             
-            .navbar-toggle {
-                display: block;
+            .hero-content {
+                padding: 0 15px;
+            }
+            
+            .grid {
+                gap: 15px;
             }
             
             .grid-cols-2, .grid-cols-3 {
                 grid-template-columns: 1fr;
             }
             
-            .footer-container {
-                grid-template-columns: 1fr;
+            .feature-item, .machinery-item, .card {
+                margin-bottom: 15px;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 10px;
+            }
+            
+            .section {
+                padding: 40px 0;
             }
             
             .hero {
-                height: 60vh;
+                height: auto;
+                min-height: 60vh;
+                padding: 60px 0;
             }
             
             .hero-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .hero-subtitle {
                 font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .footer-container {
+                gap: 20px;
             }
         }
     </style>
@@ -527,7 +600,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1 class="hero-title">Premium Polyester Yarn Manufacturing</h1>
-                <p class="hero-subtitle">BF Enterprises Mills specializes in 44mm pure polyester fiber spinning with state-of-the-art technology and unwavering commitment to quality.</p>
+                <p class="hero-subtitle">BF Enterprises Mills specializes in 44mm & 51mm pure polyester (Ibrahim fiber) spinning with state-of-the-art technology and unwavering commitment to quality.</p>
                 <div class="hero-cta">
                     <a href="#contact" class="btn">Get a Quote</a>
                     <a href="#about" class="btn btn-secondary">Learn More</a>
@@ -562,11 +635,11 @@
     <!-- About Section -->
     <section class="section" id="about">
         <div class="container">
-            <h2 class="section-title">About BF Enterprises Mills</h2>
+            <h2 class="section-title">About BF Enterprises (Pvt) Ltd</h2>
             <div class="grid grid-cols-2 gap-20">
                 <div>
                     <h3>Our Story</h3>
-                    <p>BF Enterprises Mills (Pvt) Ltd was established with a vision to become a leading manufacturer of premium polyester yarn in the textile industry. Our journey began with a commitment to quality, efficiency, and sustainable practices.</p>
+                    <p>BF Enterprises (Pvt) Ltd was established with a vision to become a leading manufacturer of premium polyester yarn in the textile industry. Our journey began with a commitment to quality, efficiency, and sustainable practices.</p>
                     
                     <h3 class="mt-40">Our Mission</h3>
                     <p>To produce high-quality polyester yarn that meets the diverse needs of our customers while maintaining sustainable and efficient production practices.</p>
@@ -581,16 +654,16 @@
                     </ul>
                 </div>
                 <div>
-                    <img src="/api/placeholder/600/400" alt="BF Enterprises Mills Factory" class="about-img">
+                    <!-- <img src="/api/placeholder/600/400" alt="BF Enterprises Mills Factory" class="about-img"> -->
                     
                     <h3 class="mt-40">Production Capabilities</h3>
-                    <p>Our factory is equipped with state-of-the-art machinery and technology, enabling us to produce premium polyester yarn with precision and efficiency. With a focus on 44mm pure polyester fiber, we cater to diverse market segments.</p>
+                    <p>Our factory is equipped with state-of-the-art machinery and technology, enabling us to produce premium polyester yarn with precision and efficiency. With a focus on 44mm & 51mm pure polyester fiber, we cater to diverse market segments.</p>
                     
                     <p>Key capabilities include:</p>
                     <ul>
-                        <li>Annual production capacity of X tons</li>
-                        <li>Specialized in various counts ranging from Ne 10 to Ne 40</li>
-                        <li>Multiple yarn characteristics including ring-spun, compact, and slub varieties</li>
+                        <li>Daily production capacity of x tons</li>
+                        <li>Specialized in various counts ranging from Ne 10 to Ne 50, available in S-twist and Z-twist.</li>
+                        <li>Ring-spun yarn characteristics influence the final fabric quality.</li>
                         <li>Customized yarn development based on client specifications</li>
                     </ul>
                 </div>
@@ -602,22 +675,22 @@
     <section class="section" id="products">
         <div class="container">
             <h2 class="section-title">Our Products & Services</h2>
-            <p class="section-subtitle">Specializing in premium 44mm pure polyester yarn manufacturing</p>
+            <p class="section-subtitle">Specializing in premium 44mm & 51mm pure polyester yarn manufacturing</p>
             
             <div class="product-item">
                 <div class="grid grid-cols-2 gap-20">
                     <div>
-                        <img src="/api/placeholder/600/400" alt="Polyester Yarn" class="product-img">
+                        <!-- <img src="/api/placeholder/600/400" alt="Polyester Yarn" class="product-img"> -->
                     </div>
                     <div>
                         <h3>Polyester Yarn Production</h3>
-                        <p>At BF Enterprises Mills, we specialize in manufacturing high-quality polyester yarn from 44mm pure polyester fiber. Our production process ensures consistency, durability, and excellent performance in various textile applications.</p>
+                        <p>At BF Enterprises Mills, we specialize in manufacturing high-quality polyester yarn from 44mm & 51mm pure polyester fiber. Our production process ensures consistency, durability, and excellent performance in various textile applications.</p>
                         
                         <h4 class="mt-40">Yarn Specifications:</h4>
                         <ul>
-                            <li>Yarn Count Range: Ne 10 to Ne 40</li>
-                            <li>Fiber Length: 44mm</li>
-                            <li>Yarn Types: Ring-spun, Compact, Slub</li>
+                            <li>Yarn Count Range: Ne 10 to Ne 50, available in S-twist and Z-twist.</li>
+                            <li>Fiber Length: 44mm & 51mm</li>
+                            <li>Yarn Types: Ring-spun</li>
                             <li>Applications: Woven fabrics, Knitted fabrics, Home textiles</li>
                         </ul>
                     </div>
@@ -641,7 +714,7 @@
                         </ol>
                     </div>
                     <div>
-                        <img src="/api/placeholder/600/400" alt="Production Process" class="product-img">
+                        <!-- <img src="/api/placeholder/600/400" alt="Production Process" class="product-img"> -->
                     </div>
                 </div>
             </div>
@@ -649,7 +722,7 @@
             <div class="product-item">
                 <div class="grid grid-cols-2 gap-20">
                     <div>
-                        <img src="/api/placeholder/600/400" alt="Custom Services" class="product-img">
+                        <!-- <img src="/api/placeholder/600/400" alt="Custom Services" class="product-img"> -->
                     </div>
                     <div>
                         <h3>Custom Services</h3>
@@ -669,7 +742,132 @@
         </div>
     </section>
 
-    <!-- Sustainability Section (Continued) -->
+    <!-- Machinery Section -->
+    <section class="section machinery" id="machinery">
+        <div class="container">
+            <h2 class="section-title">Our Machinery</h2>
+            <p class="section-subtitle">State-of-the-art equipment for premium yarn production</p>
+            
+            <div class="grid grid-cols-2 gap-20">
+                <div class="machinery-item">
+                    <!-- <img src="/api/placeholder/400/300" alt="Blow Room" class="machinery-img"> -->
+                    <h3>Blow Room</h3>
+                    <ul>
+                        <li>Scuther Trutzschler</li>
+                        <li>Chute feed line</li>
+                    </ul>
+                    <p>Advanced fiber opening and cleaning machinery ensuring thorough blend preparation and contamination removal.</p>
+                </div>
+                <div class="machinery-item">
+                    <!-- <img src="/api/placeholder/400/300" alt="Carding Machine" class="machinery-img"> -->
+                    <h3>Carding Department</h3>
+                    <ul>
+                        <li>MK-4</li>
+                        <li>MK-5D</li>
+                        <li>MK-5A</li>
+                    </ul>
+                    <p>High-precision carding machines for optimal fiber individualization and parallel alignment.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-20 mt-40">
+                <div class="machinery-item">
+                    <!-- <img src="/api/placeholder/400/300" alt="Drawing Simplex" class="machinery-img"> -->
+                    <h3>Drawing & Simplex</h3>
+                    <ul>
+                        <li>DX-8</li>
+                        <li>DX-8-LT</li>
+                        <li>DYH 500C</li>
+                        <li>FL-16</li>
+                        <li>FA458A</li>
+                    </ul>
+                    <p>Advanced drawing frames and simplex machines for precise fiber alignment and drafting.</p>
+                </div>
+                <div class="machinery-item">
+                    <!-- <img src="/api/placeholder/400/300" alt="Ring Frame" class="machinery-img"> -->
+                    <h3>Ring Spinning & Auto Cone</h3>
+                    <ul>
+                        <li>Ring Frames: RY-5, FA-1520</li>
+                        <li>Auto Cone: 21-C</li>
+                    </ul>
+                    <p>Modern ring frames equipped with advanced sensors for consistent yarn quality and productivity.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-20 mt-40">
+                <div class="card">
+                    <h3>Technical Specifications</h3>
+                    <ul>
+                        <li>Production Capacity: 50 tons/day</li>
+                        <li>Automated Material Handling Systems</li>
+                        <li>Electronic Yarn Clearers</li>
+                        <li>Computerized Quality Control Systems</li>
+                        <li>Energy-Efficient Motors</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Maintenance Program</h3>
+                    <ul>
+                        <li>Regular Preventive Maintenance</li>
+                        <li>Scheduled Equipment Calibration</li>
+                        <li>Professional Technical Support</li>
+                        <li>Spare Parts Inventory Management</li>
+                        <li>Performance Monitoring Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Control Section -->
+    <section class="section" id="quality">
+        <div class="container">
+            <h2 class="section-title">Quality Control</h2>
+            <p class="section-subtitle">Ensuring excellence through rigorous testing and monitoring</p>
+
+            <div class="grid grid-cols-2 gap-20">
+                <div>
+                    <h3>Testing Parameters</h3>
+                    <div class="card mb-20">
+                        <h4>Physical Testing</h4>
+                        <ul>
+                            <li>Yarn Count Testing</li>
+                            <li>Tensile Strength</li>
+                            <li>Elongation Properties</li>
+                            <li>Twist Level Measurement</li>
+                            <li>Uniformity Testing</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h4>Quality Assurance</h4>
+                        <ul>
+                            <li>Online Monitoring Systems</li>
+                            <li>Statistical Process Control</li>
+                            <li>Regular Quality Audits</li>
+                            <li>Documentation and Reporting</li>
+                            <li>Customer Feedback Integration</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <!-- <img src="/api/placeholder/600/400" alt="Quality Testing Lab" class="quality-img mb-20"> -->
+                    <div class="card">
+                        <h3>Laboratory Equipment</h3>
+                        <p>Our state-of-the-art testing laboratory is equipped with:</p>
+                        <ul>
+                            <li>Uster Tester for Yarn Quality Analysis</li>
+                            <li>Tensile Testing Machines</li>
+                            <li>Count Testing Equipment</li>
+                            <li>Twist Testing Apparatus</li>
+                            <li>Digital Microscopes for Fiber Analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
     <section class="section sustainability" id="sustainability">
         <div class="container">
             <h2 class="section-title">Sustainability & Efficiency</h2>
@@ -755,17 +953,17 @@
                         <div class="contact-info">
                             <div class="contact-item">
                                 <div class="contact-icon">📍</div>
-                                <p>123 Industrial Zone, Textile City, Country</p>
+                                <p>11 km Faisalabad Road Bhikhi Sheikhupura</p>
                             </div>
                             
                             <div class="contact-item">
                                 <div class="contact-icon">📞</div>
-                                <p>+xx xxx-xxx-xxxx</p>
+                                <p>+92 324 7676528</p>
                             </div>
                             
                             <div class="contact-item">
                                 <div class="contact-icon">✉️</div>
-                                <p>info@bfenterprisesmills.com</p>
+                                <p>info@bfenterprises.com</p>
                             </div>
                             
                             <div class="contact-item">
@@ -775,8 +973,14 @@
                         </div>
                         
                         <div class="map-container">
-                            <!-- Placeholder for Google Maps -->
-                            <img src="/api/placeholder/600/300" alt="Location Map" style="width: 100%; height: 100%; object-fit: cover;">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6794.185436924703!2d73.91579226646559!3d31.63131165949525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3918ebc557468b6d%3A0x6d45b9de9dfe139!2sMaqbool%20Usman%20Textile%20Mills!5e0!3m2!1sen!2s!4v1741966799854!5m2!1sen!2s" 
+                                    width="600" 
+                                    height="450" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
                         </div>
                     </div>
                 </div>
